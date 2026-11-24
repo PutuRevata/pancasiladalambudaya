@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F3ECDD">
+  <title>Beranda | Pancasila dalam Budaya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/content.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <section class="home-hero" aria-labelledby="home-hero-title">
+    <div class="home-hero__slides" aria-hidden="true">
+      <div class="home-hero__slide home-hero__slide--one"></div>
+      <div class="home-hero__slide home-hero__slide--two"></div>
+      <div class="home-hero__slide home-hero__slide--three"></div>
+    </div>
+    <div class="home-hero__shade" aria-hidden="true"></div>
+    <div class="home-hero__content">
+      <p class="home-hero__eyebrow">Nilai Pancasila · Etika · Seni Budaya Bali</p>
+      <h1 id="home-hero-title">Pancasila dalam Budaya</h1>
+      <p class="home-hero__subtitle">Jejak Nilai, Etika, dan Kearifan Bali di Dunia Digital</p>
+      <a class="home-hero__link" href="#isu" data-isu-text="heroButton"></a>
+    </div>
+    <a class="home-hero__scroll" href="#isu" aria-label="Gulir ke konten berikutnya">
+      <img src="assets/down-arrow.svg" width="26" height="26" alt="">
+    </a>
+  </section>
+  <section id="isu" class="isu" aria-labelledby="isu-title">
+    <div class="isu__inner">
+      <div class="isu__layout">
+        <div class="isu__intro">
+          <p class="isu__eyebrow" data-isu-text="label"></p>
+          <h2 class="isu__title" id="isu-title" data-isu-text="title"></h2>
+          <p class="isu__lead" data-isu-text="intro"></p>
+          <div class="isu__accent" aria-hidden="true"></div>
+        </div>
+        <div class="isu__items" data-isu-items></div>
+        <p class="isu__note" data-isu-text="note"></p>
+      </div>
+      <aside class="isu__closing" aria-labelledby="isu-closing-label">
+        <div class="isu__closing-layout">
+          <div class="isu__closing-content">
+            <p class="isu__closing-label" id="isu-closing-label"><span class="isu__closing-index" data-isu-text="closingIndex"></span><span data-isu-text="closingLabel"></span></p>
+            <h3 class="isu__closing-title"><span data-isu-text="closingHeadline"></span></h3>
+            <p class="isu__closing-copy"><span data-isu-text="closingBefore"></span><span class="isu__closing-highlight" data-isu-text="closingHighlight"></span><span data-isu-text="closingAfter"></span></p>
+          </div>
+        </div>
+        <div class="isu__closing-rule" aria-hidden="true"></div>
+      </aside>
+    </div>
+  </section>
+  <section id="budaya-preview" class="budaya" aria-labelledby="budaya-title">
+    <div class="budaya__inner">
+      <header class="budaya__header">
+        <p class="budaya__eyebrow" data-budaya-text="label"></p>
+        <h2 class="budaya__title" id="budaya-title" data-budaya-text="title"></h2>
+        <div class="budaya__intro">
+          <p data-budaya-text="intro"></p>
+          <a class="budaya__button" data-budaya-link>
+            <span data-budaya-text="button"></span>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+          </a>
+        </div>
+      </header>
+      <div class="budaya__panels" data-budaya-panels></div>
+    </div>
+  </section>
+  <section id="etika-preview" class="etika" aria-labelledby="etika-title">
+    <div class="etika__inner">
+      <header class="etika__header">
+        <p class="etika__eyebrow" data-etika-text="label"></p>
+        <h2 class="etika__title" id="etika-title" data-etika-text="title"></h2>
+        <p class="etika__intro" data-etika-text="intro"></p>
+      </header>
+      <div class="etika__list" data-etika-items></div>
+      <div class="etika__closing">
+        <p class="etika__closing-text" data-etika-text="closing"></p>
+        <div class="etika__closing-rule" aria-hidden="true"></div>
+        <a class="etika__button" data-etika-link>
+          <span data-etika-text="button"></span>
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="cekfakta-preview" class="cekfakta" aria-labelledby="cekfakta-title">
+    <div class="cekfakta__inner-wrap">
+      <header class="cekfakta__header">
+        <p class="cekfakta__eyebrow" data-cekfakta-text="label"></p>
+        <h2 class="cekfakta__title" id="cekfakta-title" data-cekfakta-text="title"></h2>
+        <p class="cekfakta__intro" data-cekfakta-text="intro"></p>
+      </header>
+      <div class="cekfakta__card" data-cekfakta-card></div>
+      <div class="cekfakta__closing">
+        <p class="cekfakta__closing-text" data-cekfakta-text="closing"></p>
+        <a class="cekfakta__button" data-cekfakta-link>
+          <span data-cekfakta-text="button"></span>
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+        </a>
+      </div>
+      <p class="cekfakta__live visually-hidden" data-cekfakta-live aria-live="polite"></p>
+    </div>
+  </section>
+  <section id="komitmen-preview" class="komitmen" aria-labelledby="komitmen-title">
+    <div class="komitmen__inner">
+      <div class="komitmen__content">
+        <header class="komitmen__header">
+          <p class="komitmen__eyebrow" data-komitmen-text="label"></p>
+          <h2 class="komitmen__title" id="komitmen-title" data-komitmen-text="title"></h2>
+          <p class="komitmen__intro" data-komitmen-text="intro"></p>
+        </header>
+        <form class="komitmen__form" data-komitmen-form>
+          <fieldset class="komitmen__fieldset" data-komitmen-options></fieldset>
+          <div class="komitmen__name-field">
+            <label class="komitmen__label" data-komitmen-name-label></label>
+            <input class="komitmen__input" data-komitmen-name type="text" maxlength="24" autocomplete="off">
+            <p class="komitmen__privacy" data-komitmen-text="privacy"></p>
+          </div>
+          <a class="komitmen__button" data-komitmen-link>
+            <span data-komitmen-text="button"></span>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+          </a>
+        </form>
+      </div>
+      <div class="komitmen__preview">
+        <figure class="komitmen__card" data-komitmen-card aria-live="polite" aria-atomic="true">
+          <img class="komitmen__logo" src="assets/logo-mark.png" width="72" height="44" alt="">
+          <div class="komitmen__card-center">
+            <p class="komitmen__pledge-title" data-komitmen-text="cardTitle"></p>
+            <div class="komitmen__rule" aria-hidden="true"></div>
+            <p class="komitmen__pledge" data-komitmen-pledge></p>
+          </div>
+          <div class="komitmen__card-footer">
+            <p class="komitmen__name" data-komitmen-card-name aria-live="off"></p>
+            <p class="komitmen__hashtag" data-komitmen-text="hashtag"></p>
+          </div>
+          <span class="komitmen__name-announcement visually-hidden" data-komitmen-name-announcement aria-live="polite" aria-atomic="true"></span>
+          <figcaption class="komitmen__caption" data-komitmen-text="caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section id="penutup" class="penutup" aria-labelledby="penutup-title">
+    <div class="penutup__inner">
+      <div class="penutup__rule penutup__item" aria-hidden="true"></div>
+      <h2 class="penutup__title penutup__item" id="penutup-title"><span data-penutup-text="titleBefore"></span><span class="penutup__highlight" data-penutup-text="titleHighlight"></span><span data-penutup-text="titleAfter"></span></h2>
+      <p class="penutup__copy penutup__item" data-penutup-text="copy"></p>
+      <a class="penutup__cta penutup__item" data-penutup-link>
+        <span data-penutup-text="button"></span>
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3.5 10h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></svg>
+      </a>
+      <p class="penutup__share penutup__item"><span data-penutup-text="shareBefore"></span><strong data-penutup-text="hashtag"></strong></p>
+    </div>
+  </section>
+  <footer id="site-footer"></footer>
+</body>
+</html>
