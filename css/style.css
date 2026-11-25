@@ -581,9 +581,11 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
 }
 @media (max-width: 699px) {
   .isu__closing { min-height: 100vh; padding: clamp(48px, 10vh, 88px) 18px; }
-  .isu__closing-layout { grid-template-columns: minmax(0, 1fr); gap: 26px; }
-  .isu__closing-content { max-width: none; }
-  .isu__closing-title { max-width: 16ch; font-size: clamp(2rem, 10vw, 2.8rem); }
+  .isu__closing-layout { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 26px; }
+  .isu__closing-content { max-width: none; text-align: center; }
+  .isu__closing-label { justify-content: center; }
+  .isu__closing-title { max-width: 16ch; margin-right: auto; margin-left: auto; font-size: clamp(2rem, 10vw, 2.8rem); }
+  .isu__closing-copy { margin-right: auto; margin-left: auto; }
   .isu__closing::before {
     background-image: linear-gradient(180deg, rgb(245 241 232 / 98%) 0%, rgb(245 241 232 / 94%) 55%, rgb(245 241 232 / 48%) 100%), url("../assets/identitasNasionalMobile.jpeg");
     background-position: center center, center center;
