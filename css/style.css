@@ -611,10 +611,12 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .etika { padding: 80px 20px; }
   .etika__title { font-size: clamp(2rem, 5.5vw, 3.2rem); }
   .etika__list { margin-top: 44px; }
-  .etika__row { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 30px 0; }
+  .etika__row { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 12px; padding: 30px 0; text-align: center; }
   .etika__number { font-size: 3rem; }
+  .etika__main { width: 100%; text-align: center; }
   .etika__row-title { margin-bottom: 8px; }
-  .etika__sila { justify-self: start; }
+  .etika__text { margin-inline: auto; }
+  .etika__sila { justify-self: center; }
   .cekfakta { padding: 80px 20px; }
   .cekfakta__title { font-size: clamp(2rem, 5.5vw, 3.2rem); }
   .cekfakta__card { width: 100%; }
@@ -624,7 +626,14 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .cekfakta__choice { width: 100%; }
   .komitmen { padding: 80px 20px; }
   .komitmen__inner { grid-template-columns: minmax(0, 1fr); gap: 64px; }
-  .komitmen__title { font-size: clamp(2rem, 5.5vw, 3.2rem); }
+  .komitmen__content { text-align: center; }
+  .komitmen__header { display: flex; flex-direction: column; align-items: center; }
+  .komitmen__title { margin-right: auto; margin-left: auto; font-size: clamp(2rem, 5.5vw, 3.2rem); }
+  .komitmen__intro { margin-right: auto; margin-left: auto; }
+  .komitmen__fieldset, .komitmen__name-field { width: 100%; text-align: center; }
+  .komitmen__legend, .komitmen__label { text-align: center; }
+  .komitmen__option { text-align: left; }
+  .komitmen__input { text-align: center; }
   .komitmen__preview { width: min(100%, 280px); }
   .komitmen__card { width: 100%; transform: rotate(0); }
   .komitmen__button { width: 100%; align-self: stretch; }
