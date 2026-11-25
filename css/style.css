@@ -544,6 +544,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .site-header__bar { min-height: 60px; }
   .site-header.is-compact .site-header__bar { min-height: 56px; }
   .site-header__menu-button, .site-header.is-compact .site-header__menu-button { transform: translateX(-8px); }
+  .site-header__menu-button .menu-icon { transform: translateY(-3px); }
   .site-header__cta, .site-header.is-compact .site-header__cta { translate: 0 0; }
   .site-header__menu-button { width: 42px; height: 42px; }
   .site-logo { width: 170px; height: 52px; }
