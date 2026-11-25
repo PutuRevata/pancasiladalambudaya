@@ -538,7 +538,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
 
 @media (max-width: 600px) {
   :root { --tinggi-header: 60px; }
-  .site-header { padding: 4px 14px 0; }
+  .site-header { padding: 4px 14px 0; animation: mobile-header-enter 950ms cubic-bezier(.22, .61, .36, 1) both; }
   .site-header__bar { min-height: 60px; }
   .site-header.is-compact .site-header__bar { min-height: 56px; }
   .site-header__menu-button, .site-header.is-compact .site-header__menu-button { transform: translateX(-8px); }
@@ -558,6 +558,10 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .home-hero__eyebrow-desktop { display: none; }
   .home-hero__eyebrow-mobile { display: inline; }
   .home-hero__content h1 { max-width: 14ch; font-size: clamp(3.2rem, 14.5vw, 5.5rem); }
+}
+@keyframes mobile-header-enter {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 @media (max-width: 899px) {
   .isu { padding: 72px 18px; }
@@ -631,6 +635,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .site-header { animation: none !important; }
   .menu-panel { transition: opacity 150ms ease, visibility 0s linear 150ms !important; }
   .menu-panel.is-open { transition: opacity 150ms ease, visibility 0s !important; }
   .menu-panel__item, .menu-panel__label { transform: none !important; transition-duration: 150ms !important; transition-delay: 0ms !important; }
