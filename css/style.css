@@ -551,7 +551,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .site-header__cta-long { display: none; }
   .site-header__cta-short { display: inline; }
   .page-shell { width: min(calc(100% - 36px), var(--lebar-isi)); padding-top: 56px; }
-  .home-hero { height: 80vh; height: 80svh; }
+  .home-hero { height: 82vh; height: 82svh; }
   .home-hero__slide { background-position: right center; }
   .home-hero__content { width: min(calc(100% - 40px), 1180px); }
   .home-hero__eyebrow { font-size: .8rem; }
