@@ -551,6 +551,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .site-header__cta-long { display: none; }
   .site-header__cta-short { display: inline; }
   .page-shell { width: min(calc(100% - 36px), var(--lebar-isi)); padding-top: 56px; }
+  .home-hero { height: 85vh; height: 85svh; }
   .home-hero__content { width: min(calc(100% - 40px), 1180px); }
   .home-hero__eyebrow-desktop { display: none; }
   .home-hero__eyebrow-mobile { display: inline; }
