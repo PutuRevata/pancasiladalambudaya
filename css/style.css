@@ -552,10 +552,12 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .site-header__cta-short { display: inline; }
   .page-shell { width: min(calc(100% - 36px), var(--lebar-isi)); padding-top: 56px; }
   .home-hero { height: 80vh; height: 80svh; }
+  .home-hero__slide { background-position: right center; }
   .home-hero__content { width: min(calc(100% - 40px), 1180px); }
+  .home-hero__eyebrow { font-size: .8rem; }
   .home-hero__eyebrow-desktop { display: none; }
   .home-hero__eyebrow-mobile { display: inline; }
-  .home-hero__content h1 { max-width: 14ch; font-size: clamp(3.1rem, 14vw, 5.3rem); }
+  .home-hero__content h1 { max-width: 14ch; font-size: clamp(3.2rem, 14.5vw, 5.5rem); }
 }
 @media (max-width: 899px) {
   .isu { padding: 72px 18px; }
