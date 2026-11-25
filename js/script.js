@@ -26,6 +26,16 @@
       const value = isuContent[element.dataset.isuAriaLabel];
       if (typeof value === "string") element.setAttribute("aria-label", value);
     });
+    const mobileClosingTitle = document.querySelector("[data-isu-mobile-title]");
+    if (mobileClosingTitle && typeof isuContent.closingHeadline === "string") {
+      const words = isuContent.closingHeadline.trim().split(/\s+/);
+      const joinedWords = words.splice(-2).join(" ");
+      mobileClosingTitle.append(document.createTextNode(`${words.join(" ")} `));
+      const unbrokenPhrase = document.createElement("span");
+      unbrokenPhrase.className = "isu__closing-title-unbroken";
+      unbrokenPhrase.textContent = joinedWords;
+      mobileClosingTitle.append(unbrokenPhrase);
+    }
 
     const isuItems = document.querySelector("[data-isu-items]");
     if (isuItems) {

@@ -475,6 +475,7 @@ button { font: inherit; }
 }
 .isu__closing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .92fr); gap: clamp(32px, 7vw, 96px); align-items: center; max-width: 1040px; margin-inline: auto; }
 .isu__closing-content { position: relative; z-index: 1; max-width: 600px; }
+.isu__closing-title-mobile { display: none; }
 .isu__closing-label { display: flex; align-items: center; gap: 11px; margin: 0 0 23px; color: var(--heritage-gold-text); font-size: .72rem; font-weight: 700; letter-spacing: .17em; }
 .isu__closing-index { padding-right: 11px; border-right: 1px solid rgb(181 138 50 / 65%); color: var(--heritage-muted); font-size: .68rem; letter-spacing: .12em; }
 .isu__closing-title { max-width: 14ch; margin: 0 0 20px; color: var(--heritage-charcoal); font-family: var(--font-judul); font-size: clamp(2.2rem, 4.4vw, 3.5rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.05; }
@@ -584,7 +585,10 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .isu__closing-layout { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 26px; }
   .isu__closing-content { max-width: none; text-align: center; }
   .isu__closing-label { justify-content: center; }
-  .isu__closing-title { max-width: 16ch; margin-right: auto; margin-left: auto; font-size: clamp(2rem, 10vw, 2.8rem); }
+  .isu__closing-title-desktop { display: none; }
+  .isu__closing-title-mobile { display: block; max-width: 100%; }
+  .isu__closing-title-unbroken { white-space: nowrap; }
+  .isu__closing-title { max-width: 100%; margin-right: auto; margin-left: auto; font-size: clamp(2rem, 10vw, 2.8rem); }
   .isu__closing-copy { margin-right: auto; margin-left: auto; }
   .isu__closing::before {
     background-image: linear-gradient(180deg, rgb(245 241 232 / 98%) 0%, rgb(245 241 232 / 94%) 55%, rgb(245 241 232 / 48%) 100%), url("../assets/identitasNasionalMobile.jpeg");
