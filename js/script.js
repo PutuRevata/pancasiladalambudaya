@@ -509,7 +509,7 @@
     headerRoot.className = "site-header";
     headerRoot.innerHTML = `
       <div class="site-header__bar">
-        <button class="site-header__menu-button" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="site-menu">
+        <button class="site-header__menu-button" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="menu-panel">
           <span class="menu-icon" aria-hidden="true"><img class="menu-icon__image" src="assets/iconMenu.svg" width="30" height="25" alt=""><span></span><span></span><span></span></span>
         </button>
         <a class="site-logo" href="index.html" aria-label="${site.name}, beranda">
@@ -518,55 +518,111 @@
         </a>
         <a class="site-header__cta" href="${nextPage.url}">
           <span class="site-header__cta-label"><span class="site-header__cta-long">${currentPage.cta}</span><span class="site-header__cta-short">${currentPage.shortCta}</span></span>
-          <svg class="site-header__cta-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg>
         </a>
-      </div>
-      <div class="site-header__rule poleng-line" aria-hidden="true"></div>
-      <section class="menu-panel" id="site-menu" aria-label="Navigasi utama" aria-hidden="true" inert>
-        <nav class="menu-panel__nav" aria-label="Halaman situs"><ol class="menu-panel__list">${site.pages.map((page, i) => `
-          <li><a class="menu-panel__link" href="${page.url}"${page.url === currentPage.url ? ' aria-current="page"' : ""}>
-            <span class="menu-panel__number">${String(i + 1).padStart(2, "0")}</span><span class="menu-panel__label">${page.title}</span>
-          </a></li>`).join("")}</ol></nav>
-        <div class="menu-panel__footer"><p class="menu-panel__site-name">${site.name}</p><p class="menu-panel__subtitle">${site.subtitle}</p></div>
-      </section>`;
+      </div>`;
 
     const menuButton = headerRoot.querySelector(".site-header__menu-button");
-    const menuPanel = headerRoot.querySelector(".menu-panel");
-    const logoLink = headerRoot.querySelector(".site-logo");
-    const ctaLink = headerRoot.querySelector(".site-header__cta");
+    const menuPanel = document.createElement("section");
+    menuPanel.className = "menu-panel";
+    menuPanel.id = "menu-panel";
+    menuPanel.setAttribute("role", "dialog");
+    menuPanel.setAttribute("aria-modal", "true");
+    menuPanel.setAttribute("aria-label", "Menu navigasi");
+    menuPanel.setAttribute("aria-hidden", "true");
+    menuPanel.inert = true;
+    menuPanel.innerHTML = `
+      <div class="menu-panel__topbar">
+        <button class="menu-panel__close" type="button" aria-label="Tutup menu"><span class="menu-panel__close-icon" aria-hidden="true"><span></span><span></span></span></button>
+      </div>
+      <div class="menu-panel__content">
+        <nav class="menu-panel__nav" aria-label="Halaman situs"><ol class="menu-panel__list">${site.pages.map((page, i) => `
+          <li class="menu-panel__item" style="--menu-index:${i}"><a class="menu-panel__link" href="${page.url}"${page.url === currentPage.url ? ' aria-current="page"' : ""}>
+            <span class="menu-panel__number"><span>${String(i + 1).padStart(2, "0")}</span>${page.url === currentPage.url ? '<span class="menu-panel__active-dot" aria-hidden="true"></span>' : ""}</span>
+            <span class="menu-panel__label">${page.title}</span>
+          </a></li>`).join("")}</ol></nav>
+      </div>`;
+    document.body.insertBefore(menuPanel, footerRoot || null);
     const menuLinks = [...menuPanel.querySelectorAll("a")];
     let isOpen = false;
-    let previousFocus = null;
+    let lockedScrollY = 0;
+    let bodyLockStyles = null;
+    let scrollBehaviorBeforeMenu = "";
+    const backgroundStates = new Map();
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
     function setMenu(open) {
+      if (open === isOpen) return;
+      const scrollAtOpen = open ? window.scrollY : lockedScrollY;
       isOpen = open;
       menuButton.setAttribute("aria-expanded", String(open));
       menuButton.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
       menuPanel.setAttribute("aria-hidden", String(!open));
       menuPanel.inert = !open;
-      logoLink.inert = open;
-      ctaLink.inert = open;
       menuPanel.classList.toggle("is-open", open);
+      document.documentElement.classList.toggle("menu-open", open);
       document.body.classList.toggle("menu-open", open);
       if (open) {
-        previousFocus = document.activeElement;
-        requestAnimationFrame(() => menuLinks[0]?.focus());
-      } else if (previousFocus) {
-        menuButton.focus();
+        lockedScrollY = scrollAtOpen;
+        bodyLockStyles = {
+          position: document.body.style.position,
+          top: document.body.style.top,
+          left: document.body.style.left,
+          right: document.body.style.right,
+          width: document.body.style.width
+        };
+        scrollBehaviorBeforeMenu = document.documentElement.style.scrollBehavior;
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${lockedScrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+        [...document.body.children].forEach((element) => {
+          if (element === menuPanel) return;
+          backgroundStates.set(element, {
+            inert: element.inert,
+            ariaHidden: element.getAttribute("aria-hidden")
+          });
+          element.inert = true;
+          element.setAttribute("aria-hidden", "true");
+        });
+        requestAnimationFrame(() => menuPanel.querySelector(".menu-panel__close").focus({ preventScroll: true }));
+      } else {
+        [...backgroundStates.entries()].forEach(([element, state]) => {
+          element.inert = state.inert;
+          if (state.ariaHidden === null) element.removeAttribute("aria-hidden");
+          else element.setAttribute("aria-hidden", state.ariaHidden);
+        });
+        backgroundStates.clear();
+        document.body.style.position = bodyLockStyles.position;
+        document.body.style.top = bodyLockStyles.top;
+        document.body.style.left = bodyLockStyles.left;
+        document.body.style.right = bodyLockStyles.right;
+        document.body.style.width = bodyLockStyles.width;
+        bodyLockStyles = null;
+        menuButton.focus({ preventScroll: true });
+        document.documentElement.style.scrollBehavior = "auto";
+        window.scrollTo(0, lockedScrollY);
+        document.documentElement.style.scrollBehavior = scrollBehaviorBeforeMenu;
+        scrollBehaviorBeforeMenu = "";
       }
     }
 
     menuButton.addEventListener("click", () => setMenu(!isOpen));
-    menuPanel.addEventListener("click", (event) => { if (event.target === menuPanel) setMenu(false); });
+    menuPanel.querySelector(".menu-panel__close").addEventListener("click", () => setMenu(false));
+    menuPanel.addEventListener("click", (event) => {
+      if (!event.target.closest(".menu-panel__nav, .menu-panel__close")) setMenu(false);
+    });
+    menuLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
     document.addEventListener("keydown", (event) => {
       if (!isOpen) return;
       if (event.key === "Escape") { event.preventDefault(); setMenu(false); return; }
       if (event.key === "Tab") {
-        const focusables = [menuButton, ...menuLinks];
+        const focusables = [...menuPanel.querySelectorAll(focusableSelector)];
         const first = focusables[0];
         const last = focusables[focusables.length - 1];
         if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
         else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        else if (!menuPanel.contains(document.activeElement)) { event.preventDefault(); first.focus(); }
       }
     });
 
