@@ -703,14 +703,8 @@
 
       const bottom = createFooterElement("div", "footer__bottom");
       const credits = createFooterElement("div", "footer__credit");
-      const ownerName = footerContent.penanggungJawab[currentPage.id] || "[NAMA]";
-      credits.append(
-        createFooterElement("p", "footer__credit-owner", `${footerContent.creditPrefix}${ownerName}`),
-        createFooterElement("p", "footer__credit-source", `${footerContent.heroCreditPrefix}${footerContent.sumberFotoHero}${footerContent.heroCreditSuffix}`),
-        createFooterElement("p", "footer__credit-ai", footerContent.kreditAI)
-      );
+      credits.append(createFooterElement("p", "footer__copyright", footerContent.hakCipta));
       const legal = createFooterElement("div", "footer__legal");
-      legal.append(createFooterElement("p", "footer__copyright", footerContent.hakCipta));
       const toTop = createFooterElement("a", "footer__top-link", footerContent.kembaliKeAtas);
       toTop.href = "#";
       const topArrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");

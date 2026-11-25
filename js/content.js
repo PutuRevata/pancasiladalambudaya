@@ -220,18 +220,6 @@ window.contentFooter = {
     { name: "YouTube", url: "" }
   ],
   hashtag: "#PancasilaDalamBudaya",
-  penanggungJawab: {
-    beranda: "[NAMA]",
-    budaya: "[NAMA]",
-    etika: "[NAMA]",
-    cekfakta: "[NAMA]",
-    komitmen: "[NAMA]"
-  },
-  sumberFotoHero: "[SUMBER FOTO HERO]",
-  creditPrefix: "Penanggung jawab konten: ",
-  heroCreditPrefix: "Foto hero: ",
-  heroCreditSuffix: ".",
-  kreditAI: "Foto ilustrasi budaya dihasilkan dengan AI.",
   hakCipta: "© 2026 Pancasila dalam Budaya",
   kembaliKeAtas: "Kembali ke atas",
   logoAlt: "Pancasila dalam Budaya"

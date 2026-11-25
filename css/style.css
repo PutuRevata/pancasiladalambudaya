@@ -39,6 +39,7 @@ button { font: inherit; }
   padding: 6px clamp(16px, 4vw, 56px) 0;
   background-color: #fff;
   transition: padding 220ms ease, box-shadow 220ms ease;
+  animation: header-enter 950ms cubic-bezier(.22, .61, .36, 1) both;
 }
 .site-header.is-compact { background-color: #fff; box-shadow: 0 2px 8px rgb(27 26 23 / 9%); }
 .site-header__bar {
@@ -512,7 +513,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
 .footer { padding: 72px 20px 32px; border-top: 1px solid rgb(201 162 75 / 60%); color: var(--kertas); background: var(--tinta); }
 .footer__inner { width: min(100%, 1200px); margin-inline: auto; }
 .footer__columns { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 56px; }
-.footer__logo-box { display: inline-flex; min-height: 120px; align-items: center; padding: 12px; border-radius: 10px; background: var(--kertas); }
+.footer__logo-box { display: inline-flex; min-height: 120px; align-items: center; padding: 0; border-radius: 0; background: transparent; }
 .footer__logo { display: block; width: auto; max-width: 280px; height: 96px; object-fit: contain; }
 .footer__subtitle { max-width: 320px; margin: 18px 0 10px; color: rgb(243 236 221 / 85%); font-size: 15px; line-height: 1.6; }
 .footer__project-note { margin: 0; color: rgb(243 236 221 / 70%); font-size: 13px; line-height: 1.6; }
@@ -538,7 +539,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
 
 @media (max-width: 600px) {
   :root { --tinggi-header: 60px; }
-  .site-header { padding: 4px 14px 0; animation: mobile-header-enter 950ms cubic-bezier(.22, .61, .36, 1) both; }
+  .site-header { padding: 4px 14px 0; }
   .site-header__bar { min-height: 60px; }
   .site-header.is-compact .site-header__bar { min-height: 56px; }
   .site-header__menu-button, .site-header.is-compact .site-header__menu-button { transform: translateX(-8px); }
@@ -559,7 +560,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .home-hero__eyebrow-mobile { display: inline; }
   .home-hero__content h1 { max-width: 14ch; font-size: clamp(3.2rem, 14.5vw, 5.5rem); }
 }
-@keyframes mobile-header-enter {
+@keyframes header-enter {
   from { opacity: 0; transform: translateY(-18px); }
   to { opacity: 1; transform: translateY(0); }
 }
@@ -579,12 +580,12 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
   .budaya__panel:focus-within .budaya__photo { transform: none; }
 }
 @media (max-width: 699px) {
-  .isu__closing { padding: 30px 6px 28px; }
+  .isu__closing { min-height: 100vh; padding: clamp(48px, 10vh, 88px) 18px; }
   .isu__closing-layout { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .isu__closing-content { max-width: none; }
   .isu__closing-title { max-width: 16ch; font-size: clamp(2rem, 10vw, 2.8rem); }
   .isu__closing::before {
-    background-image: linear-gradient(180deg, rgb(245 241 232 / 98%) 0%, rgb(245 241 232 / 94%) 55%, rgb(245 241 232 / 48%) 100%), url("../assets/identitasNasional.jpg");
+    background-image: linear-gradient(180deg, rgb(245 241 232 / 98%) 0%, rgb(245 241 232 / 94%) 55%, rgb(245 241 232 / 48%) 100%), url("../assets/identitasNasionalMobile.jpeg");
     background-position: center center, center center;
     background-size: 100% 100%, cover;
   }
