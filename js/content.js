@@ -144,7 +144,7 @@ window.contentEtika = {
   ]
 };
 
-/* Satu contoh klaim untuk preview cek fakta; lengkapi placeholder bersama tim. */
+/* Satu contoh klaim untuk preview cek fakta. */
 window.contentCekfakta = {
   label: "04 · Cek Fakta",
   title: "Bisakah Kamu Membedakannya?",
@@ -153,13 +153,17 @@ window.contentCekfakta = {
   question: "Menurutmu, klaim ini...",
   hoaxChoice: "Hoaks",
   factChoice: "Fakta",
-  claim: "[ISI KLAIM CONTOH]",
+  claim: "Gempa besar dan tsunami baru saja melanda Bali pada 14 Juli 2026.",
   verdict: "hoaks",
-  explanation: "[ISI PENJELASAN + SUMBER BANTAHAN]",
-  steps: ["[ISI LANGKAH 1]", "[ISI LANGKAH 2]", "[ISI LANGKAH 3]"],
+  explanation: "BMKG Bali hanya mencatat dua gempa kecil pada 14 Juli 2026, yaitu di Kuta Selatan (magnitudo 2,5) dan Gianyar (magnitudo 2,1). Keduanya tidak memicu tsunami. Video yang beredar memakai rekaman lama dari kejadian di Medan (2025) dan Nusa Penida (2022).",
+  steps: [
+    "Cek informasi gempa dan peringatan tsunami di kanal resmi BMKG, bukan dari video atau pesan berantai.",
+    "Telusuri tanggal dan asal rekaman dengan pencarian gambar balik (misalnya Google Lens) untuk melihat apakah video itu pernah muncul sebelumnya.",
+    "Cari apakah media tepercaya atau pemeriksa fakta sudah membahas klaim yang sama sebelum membagikannya."
+  ],
   sourcePrefix: "Sumber:",
-  sourceLabel: "[ISI NAMA SUMBER]",
-  sourceUrl: "#",
+  sourceLabel: "INP Polri, 21 Juli 2026 (artikel berbahasa Inggris)",
+  sourceUrl: "https://inp.polri.go.id/artikel/video-claims-of-earthquake-and-tsunami-in-bali-is-fake",
   factsHeading: "Faktanya",
   stepsHeading: "Cara memeriksanya",
   correctGuess: "Tebakanmu benar.",

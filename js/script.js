@@ -293,6 +293,12 @@
 
       const cardInner = makeElement("div", "cekfakta__inner");
       const front = makeElement("div", "cekfakta__face cekfakta__face--front");
+      const back = makeElement("div", "cekfakta__face cekfakta__face--back");
+      // Both faces occupy one grid cell so the card height follows the longer answer side.
+      front.style.gridArea = "1 / 1";
+      back.style.gridArea = "1 / 1";
+      front.style.overflow = "visible";
+      back.style.overflow = "visible";
       const claimLabel = makeElement("p", "cekfakta__claim-label", cekfaktaContent.claimLabel);
       const claim = makeElement("blockquote", "cekfakta__claim", cekfaktaContent.claim);
       const question = makeElement("p", "cekfakta__question", cekfaktaContent.question);
@@ -303,7 +309,6 @@
       choices.append(hoaxButton, factButton);
       front.append(claimLabel, claim, question, choices);
 
-      const back = makeElement("div", "cekfakta__face cekfakta__face--back");
       back.setAttribute("aria-hidden", "true");
       back.inert = true;
       const verdictRow = makeElement("div", "cekfakta__result-row");
