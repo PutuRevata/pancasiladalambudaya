@@ -71,6 +71,8 @@
   const values = dialog.querySelector("[data-rb-values]");
   const ethics = dialog.querySelector("[data-rb-ethics]");
   const position = dialog.querySelector("[data-rb-position]");
+  const previousButton = dialog.querySelector("[data-rb-previous]");
+  const nextButton = dialog.querySelector("[data-rb-next]");
   const closeButton = dialog.querySelector("[data-rb-close]");
   let activeIndex = 0;
   let returnFocus = null;
@@ -147,6 +149,8 @@
     values.textContent = item.nilai;
     ethics.textContent = item.etika;
     position.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(budaya.length).padStart(2, "0")}`;
+    previousButton.hidden = activeIndex === 0;
+    nextButton.hidden = activeIndex === budaya.length - 1;
     contentScroller.scrollTop = 0;
     setImage(image, imageWrap, item, "eager");
   }
@@ -172,8 +176,8 @@
 
   budaya.forEach((item, index) => grid.append(makeCard(item, index)));
   closeButton.addEventListener("click", closeDialog);
-  dialog.querySelector("[data-rb-previous]").addEventListener("click", () => render(activeIndex - 1));
-  dialog.querySelector("[data-rb-next]").addEventListener("click", () => render(activeIndex + 1));
+  previousButton.addEventListener("click", () => render(activeIndex - 1));
+  nextButton.addEventListener("click", () => render(activeIndex + 1));
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) closeDialog();
   });

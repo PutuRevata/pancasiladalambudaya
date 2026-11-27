@@ -565,7 +565,7 @@ h1, h2 { font-family: var(--font-judul); font-weight: 600; line-height: 1.1; }
 .fm-card__reveal-inner { min-height: 0; overflow: hidden; padding-top: 18px; border-top: 1px solid rgb(243 236 221 / 22%); }
 .fm-result { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
 .fm-result__badge { display: inline-flex; min-height: 32px; align-items: center; padding: 5px 12px; border-radius: 3px; color: var(--kertas); background: var(--hijau); font-size: .83rem; font-weight: 700; }
-.fm-result__badge:focus { outline: 2px solid var(--kertas); outline-offset: 3px; }
+.fm-result__badge:focus { outline: none; }
 .fm-result.is-wrong .fm-result__badge { background: var(--merah); }
 .fm-result__answer { color: var(--emas); font-size: .78rem; font-weight: 700; letter-spacing: .08em; }
 .fm-card__explanation { margin: 0; color: rgb(243 236 221 / 88%); font-size: .98rem; line-height: 1.7; }
@@ -614,7 +614,7 @@ html:has(.rb-dialog[open]) { overflow: hidden; }
 .rb-dialog { overscroll-behavior: contain; }
 .rb-dialog[open] { animation: rb-dialog-enter 300ms cubic-bezier(.22, .61, .36, 1) both; }
 .rb-dialog.is-closing { animation: rb-dialog-exit 200ms cubic-bezier(.22, .61, .36, 1) both; }
-.rb-dialog::backdrop { background: rgb(47 74 56 / 63%); background: color-mix(in srgb, var(--hijau) 63%, transparent); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); animation: rb-backdrop-enter 300ms ease both; }
+.rb-dialog::backdrop { background: rgb(27 26 23 / 63%); background: color-mix(in srgb, var(--hijau) 63%, transparent); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); animation: rb-backdrop-enter 300ms ease both; }
 .rb-dialog.is-closing::backdrop { animation: rb-backdrop-exit 200ms ease both; }
 @keyframes rb-dialog-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes rb-dialog-exit { to { opacity: 0; transform: translateY(12px); } }
@@ -759,7 +759,7 @@ html:has(.rb-dialog[open]) { overflow: hidden; }
   .fc-grid--enhanced .fc-card.is-flipped .fc-back { opacity: 1; visibility: visible; }
 }
 .bd-do-dont { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 1000px; margin: 24px auto 0; }
-.bd-guideline { padding: 26px 28px; border: 1px solid rgb(27 26 23 / 14%); border-left: 3px solid var(--hijau); background: var(--kertas); }
+.bd-guideline { padding: 26px 28px; border: 1px solid rgb(27 26 23 / 14%); border-left: 3px solid var(--emas-antik); background: var(--kertas); }
 .bd-guideline--avoid { border-left-color: var(--merah); }
 .bd-guideline h3 { margin: 0 0 12px; color: var(--hijau); font-family: var(--font-judul); font-size: 1.6rem; }
 .bd-guideline--avoid h3 { color: var(--merah); }
@@ -777,7 +777,8 @@ html:has(.rb-dialog[open]) { overflow: hidden; }
 .bd-hero .home-hero__slide--one { background-image: url("../assets/bgBudaya1.jpg"); }
 .bd-hero .home-hero__slide--two { background-image: url("../assets/bgBudaya2.jpg"); }
 .bd-hero .home-hero__slide--three { background-image: url("../assets/bgBudaya3.jpg"); }
-.bd-body { overflow-x: clip; }
+.bd-body { --hijau: var(--tinta); overflow-x: clip; }
+body.bd-body :focus-visible { outline-color: var(--merah); }
 
 @media (max-width: 700px) {
   .bd-page { width: min(calc(100% - 36px), 1100px); }
