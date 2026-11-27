@@ -5,14 +5,163 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F3ECDD">
   <title>Budaya | Pancasila dalam Budaya</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css"><script src="js/content.js" defer></script><script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/content.js" defer></script>
+  <script src="js/budaya-ruang.js" defer></script>
+  <script src="js/budaya-timeline.js" defer></script>
+  <script src="js/budaya-four-checks.js" defer></script>
+  <script src="js/budaya-quiz.js" charset="utf-8" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
-<body><header id="site-header"></header><main class="page-shell">
-  <p class="eyebrow">02 / Kebudayaan</p><h1>Budaya</h1>
-  <p class="page-intro">Kerangka untuk menelusuri seni, tradisi, dan kearifan lokal Bali dalam kaitannya dengan nilai Pancasila.</p>
-  <section class="placeholder-block"><h2>Ruang budaya</h2><p>Bagian ini akan memuat pengantar tentang praktik budaya Bali dan makna yang hidup di dalamnya.</p></section>
-  <section class="placeholder-block"><h2>Nilai dalam keseharian</h2><p>Kelak, contoh dan cerita akan menghubungkan kebudayaan dengan kehidupan bersama.</p></section>
-  <section class="placeholder-block"><h2>Catatan untuk tahap berikutnya</h2><p>Konten final dan materi visual akan ditambahkan pada tahap pengembangan selanjutnya.</p></section>
-</main><footer id="site-footer"></footer></body></html>
+<body class="bd-body">
+  <header id="site-header"></header>
+  <main class="page-shell bd-page">
+    <section class="home-hero bd-hero" aria-labelledby="bd-hero-title">
+      <div class="home-hero__slides" aria-hidden="true">
+        <div class="home-hero__slide home-hero__slide--one"></div>
+        <div class="home-hero__slide home-hero__slide--two"></div>
+        <div class="home-hero__slide home-hero__slide--three"></div>
+      </div>
+      <div class="home-hero__shade" aria-hidden="true"></div>
+      <div class="home-hero__content">
+        <p class="home-hero__eyebrow"><span class="home-hero__eyebrow-desktop">Kebudayaan Bali</span><span class="home-hero__eyebrow-mobile">Pancasila Â· Etika Â· Budaya</span></p>
+        <h1 id="bd-hero-title">Budaya Bali</h1>
+        <p class="home-hero__subtitle">Mengenali kearifan Bali membantu kita membawa nilai Pancasila ke dalam cara merawat dan membagikan budaya di ruang digital.</p>
+        <a class="home-hero__link" href="#ruang-budaya">Jelajahi Budaya</a>
+      </div>
+      <a class="home-hero__scroll" href="#ruang-budaya" aria-label="Gulir ke ruang budaya">
+        <img src="assets/down-arrow.svg" alt="" width="26" height="26">
+      </a>
+    </section>
+
+    <section class="bd-section" id="ruang-budaya" aria-labelledby="bd-culture-title">
+      <header class="bd-section__header">
+        <p class="bd-kicker">WARISAN DAN TANGGUNG JAWAB</p>
+        <h2 class="bd-section__title" id="bd-culture-title">Ruang budaya</h2>
+        <p class="bd-section__lead">Konten sakral Bali kadang direkam tanpa izin, budaya diedit dan diklaim tanpa sumber, sementara informasi keliru tentang adat beredar sebagai hoaks. Kearifan lokal Bali punya jawabannya: hidup selaras, saling menghormati, dan bertanggung jawab bersama. Pilih satu kartu untuk membaca maknanya.</p>
+      </header>
+      <div class="rb-grid" data-rb-grid aria-label="Enam nilai budaya Bali"></div>
+    </section>
+
+    <dialog class="rb-dialog" id="rb-dialog" aria-modal="true" aria-labelledby="rb-dialog-title">
+      <div class="rb-dialog__layout">
+        <div class="rb-dialog__image-wrap">
+          <img class="rb-dialog__image" data-rb-image alt="">
+        </div>
+        <div class="rb-dialog__body">
+          <div class="rb-m-scroll">
+            <div class="rb-dialog__top">
+              <p class="isu__data-label rb-dialog__eyebrow">BUDAYA BALI</p>
+              <button class="rb-dialog__close" type="button" data-rb-close aria-label="Tutup detail budaya" autofocus>×</button>
+            </div>
+            <h2 class="bd-section__title rb-dialog__title" id="rb-dialog-title"></h2>
+            <p class="isu__sila-tag rb-dialog__sila" data-rb-sila></p>
+            <div class="rb-dialog__sections">
+              <section class="rb-dialog__section">
+                <h3 class="isu__card-title">Budaya</h3>
+                <p class="isu__text" data-rb-culture></p>
+              </section>
+              <section class="rb-dialog__section">
+                <h3 class="isu__card-title">Nilai Pancasila</h3>
+                <p class="isu__text" data-rb-values></p>
+              </section>
+              <section class="rb-dialog__section">
+                <h3 class="isu__card-title">Etika digital</h3>
+                <p class="isu__text" data-rb-ethics></p>
+              </section>
+            </div>
+          </div>
+          <nav class="rb-dialog__navigation" aria-label="Navigasi budaya">
+            <button type="button" data-rb-previous>Sebelumnya</button>
+            <span class="isu__data-label rb-dialog__position" data-rb-position aria-live="polite"></span>
+            <button type="button" data-rb-next>Berikutnya</button>
+          </nav>
+        </div>
+      </div>
+    </dialog>
+    <section class="bd-section" id="nilai-keseharian" aria-labelledby="bd-values-title">
+      <header class="bd-section__header">
+        <p class="bd-kicker">Dari nilai ke tindakan</p>
+        <h2 class="bd-section__title" id="bd-values-title">Nilai dalam keseharian</h2>
+        <p class="bd-section__lead">Nilai Pancasila dapat terlihat dalam cara kita menjaga hubungan, berbicara, dan bertindak di ruang digital.</p>
+      </header>
+      <div class="tl" data-timeline>
+        <div class="tl-track-wrap" data-tl-track>
+          <span class="tl-track" aria-hidden="true"></span>
+          <span class="tl-progress" aria-hidden="true"></span>
+          <ol class="tl-list" data-tl-list></ol>
+        </div>
+      </div>
+      <noscript>
+        <ol class="tl-fallback">
+          <li><h3>Sila 1: Ketuhanan Yang Maha Esa</h3><p><strong>Praktik budaya Bali</strong> Tri Hita Karana dan penghormatan pada hari suci.</p><p><strong>Sikap di dunia digital</strong> Menghormati keyakinan serta tidak menjadikan ritual sebagai bahan olok-olok.</p></li>
+          <li><h3>Sila 2: Kemanusiaan yang Adil dan Beradab</h3><p><strong>Praktik budaya Bali</strong> Menyama Braya dan saling menghargai di lingkungan banjar.</p><p><strong>Sikap di dunia digital</strong> Menjaga martabat orang lain dan tidak menyebarkan ujaran kebencian.</p></li>
+          <li><h3>Sila 3: Persatuan Indonesia</h3><p><strong>Praktik budaya Bali</strong> Ngayah, gotong royong, dan hidup berdampingan.</p><p><strong>Sikap di dunia digital</strong> Membagikan cerita budaya secara inklusif serta tidak memecah warga dengan informasi SARA.</p></li>
+          <li><h3>Sila 4: Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan</h3><p><strong>Praktik budaya Bali</strong> Paruman banjar dan kesepakatan pengelolaan air dalam subak.</p><p><strong>Sikap di dunia digital</strong> Berdiskusi dengan data, mendengar tanggapan, dan memeriksa informasi sebelum menyimpulkan.</p></li>
+          <li><h3>Sila 5: Keadilan Sosial bagi Seluruh Rakyat Indonesia</h3><p><strong>Praktik budaya Bali</strong> Subak mengatur pembagian air dan tanggung jawab antarpetani.</p><p><strong>Sikap di dunia digital</strong> Mendorong akses informasi dan teknologi yang setara serta mencantumkan sumber karya.</p></li>
+        </ol>
+      </noscript>
+    </section>
+
+    <section class="bd-section" id="berbagi-budaya" aria-labelledby="bd-sharing-title">
+      <header class="bd-section__header">
+        <p class="bd-kicker">Etika sebelum mengunggah</p>
+        <h2 class="bd-section__title" id="bd-sharing-title">Sebelum membagikan budaya, tanyakan empat hal</h2>
+        <p class="bd-section__lead">Tri Kaya Parisudha mengajak kita menyelaraskan pikiran, ucapan, dan perbuatan. Dalam berbagi konten, izin dan sumber juga perlu diperiksa.</p>
+      </header>
+      <div class="fc-grid" data-four-checks></div>
+      <noscript>
+        <div class="fc-grid fc-grid--fallback">
+          <article class="fc-card"><div class="fc-card__top"><span class="fc-card__marker">01</span><svg class="fc-card__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M11 22h10m-9-4a7 7 0 1 1 8 0c-1.2.9-1.5 2-1.5 3h-5c0-1-.3-2.1-1.5-3Zm4 8v-5m-3 0h6M16 2v3M4.5 8l2.6 1.5m17.8 0L27.5 8"/></svg><span class="fc-card__aspect">Pikiran</span></div><h3 class="fc-card__question">Apakah niat saya baik?</h3><p class="fc-card__description">Mulai dari alasan di balik unggahan.</p><div class="fc-card__fallback-content"><h4>Penjelasan</h4><p>Niat menentukan arah konten. Unggahan yang bertujuan mengenalkan makna tradisi akan terasa berbeda dari unggahan yang hanya mengejar sensasi.</p><h4>Contoh tindakan</h4><ul><li>Bagikan untuk mengenalkan makna tradisi, bukan mengejek atau mencari sensasi.</li><li>Tanyakan pada diri sendiri apa yang ingin dipelajari orang dari unggahan ini.</li></ul></div></article>
+          <article class="fc-card"><div class="fc-card__top"><span class="fc-card__marker">02</span><svg class="fc-card__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h22v15H15l-6 5v-5H5zM10 12h12m-12 5h8"/></svg><span class="fc-card__aspect">Ucapan</span></div><h3 class="fc-card__question">Apakah keterangan saya benar dan sopan?</h3><p class="fc-card__description">Keterangan yang akurat menjaga makna budaya.</p><div class="fc-card__fallback-content"><h4>Penjelasan</h4><p>Caption dan judul adalah bagian dari informasi. Nama upacara yang keliru atau judul yang berlebihan dapat menyesatkan dan merendahkan budaya yang dibahas.</p><h4>Contoh tindakan</h4><ul><li>Periksa nama upacara dan hindari judul yang menyesatkan.</li><li>Gunakan bahasa yang sopan dan rujuk sumber yang bisa dipercaya.</li></ul></div></article>
+          <article class="fc-card"><div class="fc-card__top"><span class="fc-card__marker">03</span><svg class="fc-card__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 19c3-1 5-5 7-5 2 0 3 4 5 4h7a3 3 0 0 1 0 6h-9l-5 3-5-3zm7-7 2-4 3 2 2-4 3 2-2 5"/></svg><span class="fc-card__aspect">Perbuatan</span></div><h3 class="fc-card__question">Apakah tindakan ini pantas di lokasi tersebut?</h3><p class="fc-card__description">Perilaku saat merekam juga ikut dinilai.</p><div class="fc-card__fallback-content"><h4>Penjelasan</h4><p>Tempat suci dan upacara punya aturan. Mengambil gambar tidak boleh mengganggu jalannya upacara atau kekhusyukan orang yang beribadah.</p><h4>Contoh tindakan</h4><ul><li>Ikuti arahan setempat dan jangan mengganggu jalannya upacara.</li><li>Berpakaian sesuai aturan dan jangan memasuki area yang tidak diperuntukkan bagi pengunjung.</li></ul></div></article>
+          <article class="fc-card"><div class="fc-card__top"><span class="fc-card__marker">04</span><svg class="fc-card__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 27 7v8c0 7-4.5 11.5-11 14-6.5-2.5-11-7-11-14V7zm-5 13 3.5 3.5L22 12"/></svg><span class="fc-card__aspect">Izin dan sumber</span></div><h3 class="fc-card__question">Apakah saya sudah meminta izin dan memberi kredit?</h3><p class="fc-card__description">Hormati orang yang direkam dan pemilik karya.</p><div class="fc-card__fallback-content"><h4>Penjelasan</h4><p>Orang yang terlihat dalam foto atau video berhak diminta persetujuannya, dan pembuat karya berhak disebut namanya.</p><h4>Contoh tindakan</h4><ul><li>Minta persetujuan orang yang direkam dan cantumkan pemilik foto atau video.</li><li>Tulis sumber informasi di bagian keterangan atau daftar pustaka.</li></ul></div></article>
+        </div>
+      </noscript>
+      <div class="bd-do-dont">
+        <article class="bd-guideline bd-guideline--do">
+          <h3>Lakukan</h3>
+          <ul><li>Minta izin sebelum merekam atau mengunggah orang lain.</li><li>Cantumkan sumber dan pemilik karya.</li><li>Verifikasi informasi tentang adat sebelum membagikannya.</li><li>Ceritakan makna budaya dengan konteks yang tepat.</li></ul>
+        </article>
+        <article class="bd-guideline bd-guideline--avoid">
+          <h3>Hindari</h3>
+          <ul><li>Merekam ritual sakral tanpa izin.</li><li>Mengklaim karya budaya sebagai milik sendiri.</li><li>Menjelaskan adat tanpa memeriksa kebenarannya.</li><li>Berpose di area suci atau melanggar aturan setempat.</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="bd-section" id="fakta-atau-mitos" aria-labelledby="bd-quiz-title">
+      <header class="bd-section__header">
+        <p class="bd-kicker">Periksa pemahaman</p>
+        <h2 class="bd-section__title" id="bd-quiz-title">Fakta atau mitos?</h2>
+        <p class="bd-section__lead">Tebak dulu, lalu lihat penjelasannya.</p>
+      </header>
+      <div class="fm-quiz" data-fm-quiz></div>
+      <p class="fm-score" data-fm-score aria-live="polite" hidden>Skor: 0 dari 3</p>
+      <div class="fm-finish" data-fm-finish hidden aria-live="polite">
+        <p class="fm-finish__copy" data-fm-finish-copy>Terima kasih sudah memeriksa pemahamanmu tentang budaya Bali.</p>
+        <button class="fm-retry" type="button" data-fm-retry>Ulangi kuis</button>
+      </div>
+      <noscript>
+        <div class="fm-fallback">
+          <article class="fm-fallback__card"><h3><q>Semua orang boleh masuk area utama pura kapan saja.</q></h3><p><strong>Jawaban: Mitos.</strong> Pura punya aturan busana dan pembagian area. Area utama (utama mandala) diperuntukkan bagi mereka yang akan bersembahyang, dan ada waktu tertentu ketika pengunjung tidak diperkenankan masuk.</p></article>
+          <article class="fm-fallback__card"><h3><q>Ogoh-ogoh hanyalah patung hiasan.</q></h3><p><strong>Jawaban: Mitos.</strong> Ogoh-ogoh melambangkan bhuta kala (kekuatan negatif) yang diarak menjelang Nyepi sebagai simbol penyucian, sehingga punya makna, bukan sekadar hiasan.</p></article>
+          <article class="fm-fallback__card"><h3><q>Subak hanya soal bertani.</q></h3><p><strong>Jawaban: Mitos.</strong> Subak juga mengatur kerja sama, pembagian air yang adil, dan ritual keagamaan para petani.</p></article>
+        </div>
+      </noscript>
+    </section>
+
+    <section class="bd-closing" aria-labelledby="bd-closing-title">
+      <div class="bd-closing__inner">
+        <div class="penutup__rule penutup__item" aria-hidden="true"></div>
+        <h2 class="bd-closing__title penutup__title penutup__item" id="bd-closing-title">Menjaga <span class="bd-closing__highlight">budaya</span>, merawat Pancasila</h2>
+        <p class="bd-closing__copy penutup__copy penutup__item">Mari berbagi budaya dengan izin, konteks, dan sumber yang jelas, lalu membawa sikap saling menghormati ke ruang digital.</p>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+</body>
+</html>

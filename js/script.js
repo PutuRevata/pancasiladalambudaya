@@ -473,6 +473,7 @@
     [".isu__closing-content > *, .isu__closing-rule", 80, 0],
     [".budaya__eyebrow, .budaya__title, .budaya__intro p, .budaya__button", 80, 0],
     [".budaya__panel", 90, 0],
+    [".rb-card", 90, 0],
     [".etika__eyebrow, .etika__title, .etika__intro", 80, 0],
     [".etika__row", 100, 0],
     [".etika__closing-text, .etika__closing-rule, .etika__button", 80, 0],
